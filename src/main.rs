@@ -118,11 +118,13 @@ public class DbConnection {
         let reader = BufReader::new(&pom);
 
         let mut new_lines = Vec::new();
+        let mut seen = false;
         for line in reader.lines() {
             let line = line.unwrap();
-            if line.contains("</dependency>") {
+            if line.contains("</dependency>") && !seen {
                 new_lines.push(line);
                 new_lines.push(psqldep.to_owned());
+                seen = true;
             } else {
                 new_lines.push(line);
             }

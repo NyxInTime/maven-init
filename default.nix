@@ -5,13 +5,13 @@
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "maven-init";
-  version = "1.1.0";
+  version = "1.2.0";
 
   src = fetchFromGitHub {
     owner = "NyxInTime";
     repo = "maven-init";
     tag = finalAttrs.version;
-    hash = "sha256-v4Jd+vLaVo1+WhoNaBYiKMFY802ZDlFvkWi0mkPXatQ=";
+    hash = "sha256-4/ESv775o1QchpwpuVdWesaE4dyqIQ6K5HaQCHiX4DI=";
   };
 
   cargoHash = "sha256-2a/7cMj8vKKmj99dIlcajxpMpSBiTAxf/XKJQQyyUcI=";

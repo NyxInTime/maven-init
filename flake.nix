@@ -1,5 +1,5 @@
 {
-  description = "sizeof flake";
+  description = "Maven init script";
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
   outputs =
@@ -27,7 +27,7 @@
           ...
         }:
         {
-          options.programs.maven-init.enable = lib.mkEnableOption "sizeof";
+          options.programs.maven-init.enable = lib.mkEnableOption "maven-init";
           config = lib.mkIf config.programs.maven-init.enable {
             environment.systemPackages = [
               (pkgs.callPackage ./default.nix { })

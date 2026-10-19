@@ -101,6 +101,8 @@ public class DbConnection {
 }
 "#
         .replace("{}", &args.group);
+        let mut properties = File::create("db.properties").unwrap();
+        properties.write_all(b"username=<student-id>\npassword=<password>\ndburl=jdbc:postgresql://cspostgres.dawsoncollege.qc.ca:5432/<db-username>?escapeSyntaxCallMode=callIfNoReturn").unwrap();
         let file_path =
             args.artifact.clone() + "/src/main/java/" + &group_path + "/DbConnection.java";
         let mut dbconnectionfile = File::create(file_path).unwrap();

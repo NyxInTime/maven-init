@@ -27,8 +27,8 @@
           ...
         }:
         {
-          options.programs.sizeof.enable = lib.mkEnableOption "sizeof";
-          config = lib.mkIf config.programs.sizeof.enable {
+          options.programs.maven-init.enable = lib.mkEnableOption "sizeof";
+          config = lib.mkIf config.programs.maven-init.enable {
             environment.systemPackages = [
               (pkgs.callPackage ./default.nix { })
             ];
